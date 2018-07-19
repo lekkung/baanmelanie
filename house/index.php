@@ -1,12 +1,9 @@
-<div class="row">
-	<h2 class="text-center">แบบบ้านเมลานี</h2>
-	<hr>
-	<div class="col-md-12" style="color:red;">
-		* ราคาบ้านรวมค่าระบบไฟฟ้า กระเบื้อง เครื่องสุขภัณฑ์ และเครื่องครัวเรียบร้อยแล้ว แต่ไม่รวมค่ารั้วบ้าน ระบบน้ำประปาหรือบ่อน้ำ 
-		ผู้ซื้อสามารถเลือกรูปแบบของรั้วบ้านและระบบน้ำตามที่ต้องการได้ ซึ้งราคาเหล่านี้จะแตกต่างกันไปตามรูปแบบที่ผู้ซื้อต้องการ
-	</div>
-	<br><br><br>
-</div>
+<h3 class="text-center font-prompt mt-4 mb-4 p-0 tcolor1"><?php echo $house_title;?></h3>
+<hr>
+
+<p class="font-prompt tcolor2 small">
+	<?php echo $house_subtitle; ?>
+</p>
 
 <?php
 $sql = " SELECT * FROM house_h WHERE h_show = '1' ORDER BY h_order ";
@@ -18,35 +15,35 @@ $i=1;
 	<?php while( $s = mysql_fetch_array($rs) ){ ?>
 		<div class="col-sm-6 col-md-4">
 
-			<div class="panel panel-default">
-				<div class="panel-body">
+			<div class="card mb-3">
+				<div class="card-body font-prompt p-2">
 					<div class="list-pic">
 						<a href="?page=house_detail&h_id=<?php echo $s['h_id']; ?>">
-							<img src="house/house_pic/<?php echo $s['h_id']; ?>/<?php echo $s['h_pic_show']; ?>" class="img-responsive" />
+							<img src="house/house_pic/<?php echo $s['h_id']; ?>/<?php echo $s['h_pic_show']; ?>" class="img-fluid" />
 						</a>
 					</div>
 
-					<table class="table table-condensed">
+					<table class="table table-condensed table-sm">
 						<tbody>
 							<tr>
-								<td><h4><a href="?page=house_detail&h_id=<?php echo $s['h_id']; ?>"><?php echo $s['h_name_th']; ?></a></h4></td>
-								<td><h4><div class="text-right"> <?php echo number_format($s['h_price'],0);?> ฿</div></h4></td>
+								<td><a href="?page=house_detail&h_id=<?php echo $s['h_id']; ?>"><?php echo $s['h_name_'.$_SESSION["lang"]]; ?></a></td>
+								<td><div class="text-right"> <?php echo number_format($s['h_price'],0);?> ฿</div></td>
 							</tr>
 							<tr>
-								<td><h4>แบบบ้าน</h4></td>
-								<td><h4><div class="text-right"> <?php echo $s['h_style_th'] ?></div></h4></td>
+								<td>แบบบ้าน</td>
+								<td><div class="text-right"> <?php echo $s['h_style_'.$_SESSION["lang"]] ?></div></td>
 							</tr>
 							<tr>
-								<td><h4>ห้องนอน</h4></td>
-								<td><h4><div class="text-right"> <?php echo $s['h_bed'] ?></div></h4></td>
+								<td>ห้องนอน</td>
+								<td><div class="text-right"> <?php echo $s['h_bed'] ?></div></td>
 							</tr>
 							<tr>
-								<td><h4>ห้องน้ำ</h4></td>
-								<td><h4><div class="text-right"> <?php echo $s['h_bath'] ?></div></h4></td>
+								<td>ห้องน้ำ</td>
+								<td><div class="text-right"> <?php echo $s['h_bath'] ?></div></td>
 							</tr>
 							<tr>
-								<td><h4>ที่จอดรถ</h4></td>
-								<td><h4><div class="text-right"> <?php echo $s['h_parking'] ?></div></h4></td>
+								<td>ที่จอดรถ</td>
+								<td><div class="text-right"> <?php echo $s['h_parking'] ?></div></td>
 							</tr>
 						</tbody>
 					</table>
