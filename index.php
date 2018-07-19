@@ -11,6 +11,12 @@ if( $_COOKIE['counter_user']=='' ){
 	setcookie( 'counter_user',1,time()+(15*60)); 
 }
 
+if( empty($_SESSION["lang"]) ){
+	$_SESSION["lang"] = 'th';
+}
+
+echo $_SESSION["lang"];
+
 //echo chkBrowser('MSIE');
 
 //echo $_SERVER['HTTP_USER_AGENT'];
@@ -33,7 +39,7 @@ if( $_COOKIE['counter_user']=='' ){
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 	
-	<link rel="stylesheet" href="fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	
@@ -52,9 +58,9 @@ if( $_COOKIE['counter_user']=='' ){
 
 	<div class="top-bar">
 		<div class="container text-right font-prompt">
-			<a href="http://baanmelanie.com">Thai</a> | 
-			<a href="http://baanmelanie.com/en">English</a> | 
-			<a href="http://baanmelanie.com/cn">中国语文</a>
+			<a href="change_lang.php?lang=th">Thai</a> | 
+			<a href="change_lang.php?lang=en">English</a> | 
+			<a href="change_lang.php?lang=cn">中国语文</a>
 		</div>
 	</div>
 

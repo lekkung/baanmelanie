@@ -1,191 +1,156 @@
 
-<h4 class="text-center font-prompt mt-3 mb-3 p-0">ยินดีต้อนรับสู่ บ้านเมลานี</h4>
-<hr class="m-0">
+<h4 class="text-center font-prompt mt-4 mb-4 p-0 tcolor1">ยินดีต้อนรับสู่ บ้านเมลานี</h4>
+<!-- <hr class="m-0 mb-4"> -->
 
-
-<div class="row">
-	<div class="col-sm-4 text-center">
-		<a href="?page=map">
-			<div class="rounded-circle text-white" style="width:60px; line-height:60px; background:#610061; font-size:20px;">
-				
+<div class="card">
+	<div class="card-body p-3">
+		<div class="row pt-2">
+			<div class="col-sm-4 text-center font-prompt">
+				<h4>
+					<a href="?page=map" class="tcolor2"><i class="fas fa-map-marked-alt"></i> สถานที่ตั้ง</a>
+				</h4>
+				<p>
+					ใกล้ตัวเมืองเพียง 10 นาที<br>
+					ใกล้ห้างสรรพสินค้า<br>
+					ใกล้ถนนสายหลัก เดินทางสะดวก<br>
+					ที่ดินทุกแปลงมีโฉนด<br>
+					ไม่มีน้ำท่วม และดินถล่ม<br>
+				</p>
 			</div>
-			<div class="icon-main"><span class="glyphicon glyphicon-map-marker"></span></div>
-		</a>
-		<h4 class="font-prompt"><i class="fas fa-map-marked-alt"></i> สถานที่ตั้ง</h4>
-		<p>
-			ใกล้ตัวเมืองเพียง 10 นาที<br>
-			ใกล้ห้างสรรพสินค้า<br>
-			ใกล้ถนนสายหลัก เดินทางสะดวก<br>
-			ที่ดินทุกแปลงมีโฉนด<br>
-			ไม่มีน้ำท่วม และดินถล่ม<br>
-		</p>
-	</div>
-	<div class="col-xs-4 text-center">
-		<a href="?page=land">
-			<div class="icon-main"><span class="glyphicon glyphicon-tree-deciduous"></span></div>
-		</a>
-		<h3>บรรยากาศ</h3>
-		<p>
-			เงียบ สงบ<br>
-			ร่มรื่น เป็นธรรมชาติ<br>
-			สภาพแวดล้อมสะอาด<br>
-			ไม่มีมลพิษ
-		</p>
-	</div>
-	<div class="col-xs-4 text-center">
-		<a href="?page=house">
-			<div class="icon-main"><span class="glyphicon glyphicon-home"></span></div>
-		</a>
-		<h3>บ้าน</h3>
-		<p>
-			หรูหรา ทันสมัย<br>
-			มีวิศวกรและสถาปนิกผู้เชี่ยวชาญ<br>
-			มีคุณภาพและราคาที่เป็นธรรม<br>
-		</p>
+
+			<div class="col-sm-4 text-center font-prompt">
+				<a href="?page=land" class="tcolor2">
+					<h4><i class="fab fa-pagelines"></i> บรรยากาศ</h4>
+				</a>
+				<p>
+					เงียบ สงบ<br>
+					ร่มรื่น เป็นธรรมชาติ<br>
+					สภาพแวดล้อมสะอาด<br>
+					ไม่มีมลพิษ
+				</p>
+			</div>
+
+			<div class="col-sm-4 text-center font-prompt">
+				<a href="?page=house" class="tcolor2">
+					<h3><i class="fas fa-home"></i> บ้าน</h3>
+				</a>
+				<p>
+					หรูหรา ทันสมัย<br>
+					มีวิศวกรและสถาปนิกผู้เชี่ยวชาญ<br>
+					มีคุณภาพและราคาที่เป็นธรรม<br>
+				</p>
+			</div>
+		</div>
 	</div>
 </div>
+
+
+<h4 class="text-center font-prompt mt-4 mb-4 p-0 tcolor1">แบบบ้านเมลานี</h4>
 
 <div class="row">
-	<hr>
-</div>
-
-<h2 class="text-center">แบบบ้านเมลานี</h2>
-<div class="row img-home-main">
-	<div class="col-md-3 col-xs-6" style="padding-bottom:10px;">
-		<img src="images/house/360/baan_thai.jpg" class="img-responsive">
+	<div class="col-md-3 col-6" style="padding-bottom:10px;">
+		<img src="images/house/360/baan_thai.jpg" class="img-fluid rounded">
 	</div>
-	<div class="col-md-3 col-xs-6" style="padding-bottom:10px;">
-		<img src="images/house/360/chai_dee.jpg" class="img-responsive">
+	<div class="col-md-3 col-6" style="padding-bottom:10px;">
+		<img src="images/house/360/chai_dee.jpg" class="img-fluid rounded">
 	</div>
-	<div class="col-md-3 col-xs-6" style="padding-bottom:10px;">
-		<img src="images/house/360/chokdee.jpg" class="img-responsive">
+	<div class="col-md-3 col-6" style="padding-bottom:10px;">
+		<img src="images/house/360/chokdee.jpg" class="img-fluid rounded">
 	</div>
-	<div class="col-md-3 col-xs-6" style="padding-bottom:10px;">
-		<img src="images/house/360/chom_view.jpg" class="img-responsive">
+	<div class="col-md-3 col-6" style="padding-bottom:10px;">
+		<img src="images/house/360/chom_view.jpg" class="img-fluid rounded">
 	</div>
-	<div class="col-md-3 col-xs-6" style="padding-bottom:10px;">
-		<img src="images/house/360/karun.jpg" class="img-responsive">
+	<div class="col-md-3 col-6" style="padding-bottom:10px;">
+		<img src="images/house/360/karun.jpg" class="img-fluid rounded">
 	</div>
-	<div class="col-md-3 col-xs-6" style="padding-bottom:10px;">
-		<img src="images/house/360/meesuk.jpg" class="img-responsive">
+	<div class="col-md-3 col-6" style="padding-bottom:10px;">
+		<img src="images/house/360/meesuk.jpg" class="img-fluid rounded">
 	</div>
-	<div class="col-md-3 col-xs-6" style="padding-bottom:10px;">
-		<img src="images/house/360/Pools_14.JPG" class="img-responsive">
+	<div class="col-md-3 col-6" style="padding-bottom:10px;">
+		<img src="images/house/360/Pools_14.JPG" class="img-fluid rounded">
 	</div>
-	<div class="col-md-3 col-xs-6" style="padding-bottom:10px;">
-		<img src="images/house/360/Pools_25.jpg" class="img-responsive">
+	<div class="col-md-3 col-6" style="padding-bottom:10px;">
+		<img src="images/house/360/Pools_25.jpg" class="img-fluid rounded">
 	</div>
-	<div class="col-xs-12 text-right" style="font-size:13px;">
-		<h3><a href="?page=house">แบบบ้าานทั้งหมด &raquo;</a></h3>
+	<div class="col-12 text-right font-prompt">
+		<a href="?page=house" class="tcolor3">แบบบ้านทั้งหมด.....</a>
 	</div>
 </div>
 
-<div class="row">
-	<hr>
-</div>
+
+
+<?php 
+$sql = "SELECT * FROM home_list WHERE list_group = '1'";
+$rs = mysql_query($sql);
+?>
 
 <div class="row">
-	
-	<?php
-	$list1 = array(
-		'glyphicon-tree-deciduous' => array( 
-			'อากาศดี ไม่มีมลภาวะเสีย',
-			'ธรรมชาติที่น่าทึ่ง หลากหลายด้วยวัฒนธรรม และอาหารอร่อย',
-			'สงบเงียบ และมีชีวิตที่สันติ',
-			'สภาพแวดล้อมสะอาด ทำให้ร่างสมบูรณ์',
-			),
-		'glyphicon glyphicon-user' => array(
-			'ผู้คนเป็นมิตรและพร้อมที่จะช่วยเหลือเสมอ'
-			),
-		'glyphicon-plane' => array(			
-			'ถนน สาธารณูประโภค และการคมนาคมทางอากาศเยี่ยม',
-			'ไป-มา สะดวกรถไม่ติด'
-			),
-		'glyphicon glyphicon-usd' => array(
-			'ศูนย์กลางธุรกิจ 4 ประเทศ (ไทย จีน พม่า ลาว)',
-			'เป็นพื้นที่ทีกำลังพัฒนาอย่างรวดเร็วของประเทศไทย',
-			'ง่ายต่อการที่จะเป็นนักธุรกิจหรือหางานทำ'
-			),
-		'glyphicon-ban-circle' => array(
-			'ไม่มีน้ำท่วม และดินถล่ม',
-			'อัตราการเกิดอาชญากรรมและความรุนแรงต่ำ',
-			),
-		'glyphicon glyphicon-bookmark' => array(
-			'ประวัติศาสตร์ที่น่าเคารพและประทับใจของแม่ฟ้าหลวง'
-			)
-	);
-	?>
-	<div class="col-md-6">
-		<h3 class="text-center" style="margin-bottom:30px; color:#610061;">ทำไมต้องเลือกหาบ้านพักในเชียงราย ?</h3>
-		<ul class="media-list media-list-index">
-			<?php foreach( $list1 as $icon => $text_arr ){ ?>
-			<li class="media">
-				<div class="media-left">
-					<div class="media-icon">
-						<span class="glyphicon <?php echo $icon; ?>" aria-hidden="true"></span>
+	<div class="col-md-6 font-prompt">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="text-center mb-3 font-prompt tcolor1">ทำไมต้องเลือกหาบ้านพักในเชียงราย ?</h4>
+
+				<?php while( $s = mysql_fetch_assoc($rs) ){ ?>
+				<div class="media mb-2">
+					<div class="media-icon mr-2">
+						<i class="<?php echo $s['icon']; ?>"></i>
+					</div>
+					<div class="media-body">
+						<?php echo $s["detail_".$_SESSION['lang']]; ?>
 					</div>
 				</div>
-				<div class="media-body">
-					<?php foreach( $text_arr as $text ){ ?>
-					<p class="media-heading"><?php echo $text; ?></p>
-					<?php } ?>
-				</div>
-			</li>
-			<?php } ?>
-		</ul>
+				<?php } ?>
+			</div>
+		</div>
 	</div>
 
 
 
 	<?php
 	$list2 = array(
-		'glyphicon-plane' => array( 
+		'fas fa-car' => array( 
 			'จากโครงการถึงในตัวเมืองขับรถเพียง 10 นาที',
 			'ขับรถ 5 นาทีถึงสนามกอล์ฟสันติบุรี',
 			'5 นาทีถึงเซ็นทรัล บิ๊กซี และโฮมโปร์',
 			'อยู่ใกล้ทางหลวงหมายเลข 3 ไป จีน-ลาว',
 			'ถนนสาธารณะใหม่ทั่วโครงการ'
 			),
-		'glyphicon glyphicon-home' => array(
+		'fas fa-pencil-ruler' => array(
 			'บริการออกแบบ้านให้ฟรีตามที่ฝันไว้',
 			'ไฟฟ้า 3 เฟสใหม่ของสาธารณะ',
 			),
-		'glyphicon glyphicon-map-marker' => array(			
+		'fas fa-map-marked-alt' => array(			
 			'ที่ดินทุกแปลงมีโฉนด',
 			'มีที่ดินหลาขนาดให้เลือก',
 			'พร้อมที่จะแบ่งขายตามที่ต้องการ'
 			),
-		'glyphicon-tree-deciduous' => array(
-			'สงบเงียบมีทั้งคนไทยและต่างชาติอาศัยอยู่'
+		'fas fa-users' => array(
+			'มีทั้งคนไทยและต่างชาติอาศัยอยู่'
 			),
-		'glyphicon-volume-off' => array(
-			'ไม่มีเสียงดังมลภาวะทางอากาศและรถติดตลอดจนปัญหาของเมือง'
+		'fas fa-headphones' => array(
+			'สงบเงียบไม่มีเสียงดังมลภาวะทางอากาศและรถติดตลอดจนปัญหาของเมือง'
 			),
-		'glyphicon-plus' => array(
+		'fas fa-hospital' => array(
 			'ใกล้ โรงพยาบาลที่มีการบริการฉุกเฉิน ตลอด 24 ชั่วโมง'
 			)
-	);
-	?>
+		);
+		?>
 
 
-	<div class="col-md-6">
-		<h3 class="text-center" style="margin-bottom:30px; color:#610061;">จุดเด่นของบ้านเมลานี...</h3>
-		<ul class="media-list media-list-index">
+		<div class="col-md-6 font-prompt">
+			<h4 class="text-center mb-3 tcolor1">จุดเด่นของบ้านเมลานี...</h4>
 			<?php foreach( $list2 as $icon => $text_arr ){ ?>
-			<li class="media">
-				<div class="media-left">
-					<div class="media-icon">
-						<span class="glyphicon <?php echo $icon; ?>" aria-hidden="true"></span>
-					</div>
+			<div class="media mb-2">
+				<div class="media-icon mr-2">
+					<i class="<?php echo $icon; ?>"></i>
 				</div>
 				<div class="media-body">
 					<?php foreach( $text_arr as $text ){ ?>
-					<p class="media-heading"><?php echo $text; ?></p>
+					<div class="media-heading"><?php echo $text; ?></div>
 					<?php } ?>
 				</div>
-			</li>
+			</div>
 			<?php } ?>
-		</ul>
-	</div>
+		</div>
 
-</div>
+	</div>

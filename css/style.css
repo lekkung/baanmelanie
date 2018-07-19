@@ -2,6 +2,10 @@
 	font-family: 'Prompt', sans-serif;
 }
 
+.font-prompt>*{
+	font-family: 'Prompt', sans-serif;
+}
+
 .top-bar{
 	background-color: #610061;
 	color: #FFF;
@@ -12,6 +16,35 @@
 	font-size: 13px;
 	padding: 5px 10px;
 	display: inline-block;
+}
+
+.tcolor1{
+	color:#6C1A68;
+}
+
+.tcolor2{
+	color: #FC3858;
+}
+
+.tcolor3{
+	color: #FC3706;
+}
+
+.media-icon{
+	margin: 0;
+	padding: 0;
+	background-color: #F85E7F;
+	font-size: 16px;
+	width: 32px;
+	height: 32px;
+	border-radius: 16px;
+	text-align: center;
+	color: #FFF;
+}
+
+.media-icon i{
+	line-height: 32px;
+	display: block;
 }
 
 .promo-index {
