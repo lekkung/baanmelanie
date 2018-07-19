@@ -15,7 +15,7 @@ if( empty($_SESSION["lang"]) ){
 	$_SESSION["lang"] = 'th';
 }
 
-echo $_SESSION["lang"];
+// echo $_SESSION["lang"];
 
 //echo chkBrowser('MSIE');
 
