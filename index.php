@@ -15,6 +15,16 @@ if( empty($_SESSION["lang"]) ){
 	$_SESSION["lang"] = 'th';
 }
 
+if( $_SESSION["lang"] == 'th' ){
+	require_once('lang_th.php');
+}else if( $_SESSION["lang"] == 'en' ){
+	require_once('lang_en.php');
+}else if( $_SESSION["lang"] == 'cn' ){
+	require_once('lang_cn.php');
+}
+
+$page = $_GET['page'];
+
 // echo $_SESSION["lang"];
 
 //echo chkBrowser('MSIE');
@@ -28,7 +38,9 @@ if( empty($_SESSION["lang"]) ){
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>บ้านเมลานี เชียงราย - Baan Melanie Chiang Rai - บ้านและที่ดินเชียงราย - Home and Land Chiang Rai</title>
+	<link rel="icon" type="image/x-icon" href="logo.ico">
+
+	<title>บ้านเมลานี เชียงราย - Baan Melanie Chiang Rai - บ้านและที่ดินเชียงราย บ้าน ที่ดิน เชียงราย - Home and Land Chiang Rai</title>
 
   <link href="https://fonts.googleapis.com/css?family=Prompt:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -57,14 +69,14 @@ if( empty($_SESSION["lang"]) ){
 <body>
 
 	<div class="top-bar">
-		<div class="container text-right font-prompt">
-			<a href="change_lang.php?lang=th">Thai</a> | 
-			<a href="change_lang.php?lang=en">English</a> | 
-			<a href="change_lang.php?lang=cn">中国语文</a>
+		<div class="container text-right font-prompt lang">
+			<a href="change_lang.php?lang=th" <?php if( $_SESSION["lang"] == 'th' ){ echo 'class="active"'; } ?>>Thai</a> | 
+			<a href="change_lang.php?lang=en" <?php if( $_SESSION["lang"] == 'en' ){ echo 'class="active"'; } ?>>English</a> | 
+			<a href="change_lang.php?lang=cn" <?php if( $_SESSION["lang"] == 'cn' ){ echo 'class="active"'; } ?>>中国语文</a>
 		</div>
 	</div>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
 		<div class="container">
 			<div class="col-8 col-sm-auto p-0">
 				<a class="navbar-brand" href="./" class="p-0">
@@ -78,12 +90,9 @@ if( empty($_SESSION["lang"]) ){
 
 			<div class="collapse navbar-collapse" id="navMenu">
 					<ul class="navbar-nav ml-auto">
-						<li class="nab-item"><a class="nav-link font-prompt active" href="./">หน้าหลัก</a></li>
-						<li class="nab-item"><a class="nav-link font-prompt" href="?page=house">แบบบ้าน</a></li>
-						<li class="nab-item"><a class="nav-link font-prompt" href="?page=land">ที่ดิน</a></li>
-						<li class="nab-item"><a class="nav-link font-prompt" href="?page=building">สิ่งปลูกสร้าง</a></li>
-						<li class="nab-item"><a class="nav-link font-prompt" href="?page=promotion">โปรโมชั่น</a></li>
-						<li class="nab-item"><a class="nav-link font-prompt" href="?page=contact">ติดต่อเรา</a></li>
+						<?php foreach( $menus as $menu ){ ?>
+							<li class="nab-item"><a class="nav-link font-prompt <?php if( $page==$menu['name'] ) echo 'active';?>" href="<?php echo $menu['link'];?>"><?php echo $menu['title'];?></a>
+						<?php } ?>
 					</ul>
 			</div>
 		</div>
@@ -94,6 +103,7 @@ if( empty($_SESSION["lang"]) ){
 		active_menu('<?php echo $_GET["page"]; ?>');
 	</script>
 
+	<?php if( $page == '' ){ ?>
 
 	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
@@ -113,6 +123,8 @@ if( empty($_SESSION["lang"]) ){
 		</a>
 	</div>
 
+	<?php } ?>
+
 
 	<div class="container">
 		<?php
@@ -125,53 +137,54 @@ if( empty($_SESSION["lang"]) ){
 			case 'promotion': require_once('promotion/index.php'); break;
 			case 'contact': require_once('contact/index.php'); break;
 			case 'map': require_once('map.php'); break;
-			default: require_once('th/home.php'); break;
+			default: require_once('home.php'); break;
 		}
 
 		?>
 	</div>
 
-	<div class="footer bg-dark">
+	<div class="footer bg-secondary">
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<h3 class="text-center">สนใจติดต่อ</h3>
-					<ul class="media-list media-list-footer">
-						<li class="media">
-							<div class="media-left">
-								<div class="media-icon">
-									<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
-								</div>
-							</div>
-							<div class="media-body">
-								<p class="media-heading">
-									<!-- 08-2381-7488 - Sales ( Thai, EN ) <br> -->
-									<!-- 08-1289-0505 - Sales ( Thai, EN ) <br> -->
-									08-7156-1000 - Sales (ไทย) <br>
-									08-1884-77641 - Sales (อังกฤษ) <br>
-									0-5370-1466 - Design&Construction (อังกฤษ) <br>
-									0-5370-1467 - Fax
-								</p>
-							</div>
-						</li>
-						<li class="media">
-							<div class="media-left">
-								<div class="media-icon">
-									<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-								</div>
-							</div>
-							<div class="media-body">
-								<p class="media-heading">
-									<!-- <a href="mailto:praewtong@yahoo.com">praewtong@yahoo.com</a> <br> -->
-									<a href="mailto:wim@baanmelanie.com">wim@baanmelanie.com</a> <br>
-									<a href="mailto:melanie@loxinfo.co.th">melanie@loxinfo.co.th</a> <br>
-								</p>
-							</div>
-						</li>
-					</ul>
+			<div class="row pt-3">
+				<div class="col-sm-6 font-prompt text-white">
+
+					<h4 class="text-center"><?php echo $contact_title; ?></h4>
+
+					<div class="media mb-2">
+						<div class="media-icon mr-2">
+							<i class="fas fa-phone"></i>
+						</div>
+						<div class="media-body">
+							<?php echo $contact_detail1; ?>
+						</div>
+					</div>
+
+					<div class="media mb-2">
+						<div class="media-icon mr-2">
+							<i class="far fa-envelope"></i>
+						</div>
+						<div class="media-body">
+							<?php echo $contact_detail2; ?>							
+						</div>
+					</div>
+
 				</div>
-				<div class="col-sm-4">
-					<h3 class="text-center">แผนที่บ้านเมลานี</h3>
+
+				<div class="col-sm-6">
+					<br>
+					<p class="text-center">
+						<a href="?page=promotion"><img src="images/promotion-icon.gif"></a>
+					</p>
+				</div>
+
+			</div>
+
+			<hr>
+
+			<div class="row">
+
+				<div class="col-sm-6 font-prompt text-white">
+					<h3 class="text-center"><?php echo $map_title; ?></h3>
 					<p class="text-center">
 						<a href="?page=map">
 							<img src="images/1426343296_Application-Map-128.png">
@@ -182,19 +195,8 @@ if( empty($_SESSION["lang"]) ){
 						<a href="https://www.google.co.th/maps/place/19%C2%B050'57.9%22N+99%C2%B050'59.0%22E/@19.849406,99.849728,1069m/data=!3m2!1e3!4b1!4m2!3m1!1s0x0:0x0?hl=th" target="_blank" style="color:#FFF; text-decoration:underline;">19.849406 , 99.849728</a>
 					</p>
 				</div>
-				<div class="col-sm-4">
-					<br>
-					<p class="text-center">
-						<a href="?page=promotion"><img src="images/promotion-icon.gif"></a>
-					</p>
-				</div>
-			</div>
 
-			<hr>
-
-			<div class="row">
-
-				<div class="col-xs-4">
+				<div class="col-sm-6 font-prompt text-white">
 					<h3 class="text-center">Partner</h3>
 					<div class="text-center">
 						<div style="background:#FFF; display:inline-block; padding:0 20px; margin:5px;">
@@ -202,6 +204,8 @@ if( empty($_SESSION["lang"]) ){
 								<img src="images/Udomrak logo.jpg">
 							</a>
 						</div>
+
+						<div><a href="http://www.udomrak.com/" class="text-white">www.udomrak.com</a></div>
 
 						<!-- <div style="background:#FFF; display:inline-block; padding:18px 5px; margin:5px;">
 							<a href="http://www.crpropertyservice.com/">
@@ -211,29 +215,22 @@ if( empty($_SESSION["lang"]) ){
 					</div>
 				</div>
 
-				<div class="col-xs-4">
-					<h3 class="text-center">&nbsp;</h3>
-					<ul class="media-list media-list-footer">
-						<li class="media">
-							<div class="media-left">
-								<div class="media-icon">
-									&copy;
-								</div>
-							</div>
-							<div class="media-body">
-								<p class="media-heading" style="font-size:13px;">
-									บ้านเมลานี เชียงราย - Baan Melanie Chiang Rai <br>
-	    							266 หมู่ 5 ต. ท่าสาย อ. เมือง จ. เชียงราย <br>
-	    							<span style="font-size:11px; color:#ddd;">- รูปภาพภายในเว็บไซต์เป็นรูปภาพลิขสิทธิ์ของบ้านเมลานี -</span>
-								</p>
-							</div>
-						</li>
-					</ul>
+			</div>
+
+			<hr>
+			
+			<div class="row">
+
+				<div class="col-sm-6 font-prompt text-white">
+					<p style="font-size:13px;">
+						<?php echo $copy_right; ?>
+					</p>
+
 				</div>
 
-				<div class="col-xs-4 text-center">
-					<h3 class="text-center">&nbsp;</h3>
-					<strong>จำนวนผู้เข้าชมเว็บไซต์ : 
+				<div class="col-sm-6 text-center font-prompt text-white">
+					<?php echo $visitor; ?> : 
+					<strong class="tcolor3">
 						<span>
 							<? 
 							$sql = " SELECT * FROM counter ";
@@ -246,8 +243,6 @@ if( empty($_SESSION["lang"]) ){
 				</div>
 
 			</div>
-			
-			<br>
 
 		</div>
 	</div>
