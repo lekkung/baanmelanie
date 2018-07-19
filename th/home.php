@@ -79,13 +79,14 @@
 
 
 
-<?php 
-$sql = "SELECT * FROM home_list WHERE list_group = '1'";
-$rs = mysql_query($sql);
-?>
+<div class="row mb-3">
+	
+	<?php 
+	$sql = "SELECT * FROM home_list WHERE list_group = '1'";
+	$rs = mysql_query($sql);
+	?>
 
-<div class="row">
-	<div class="col-md-6 font-prompt">
+	<div class="col-md-6 font-prompt mb-2">
 		<div class="card">
 			<div class="card-body">
 				<h4 class="text-center mb-3 font-prompt tcolor1">ทำไมต้องเลือกหาบ้านพักในเชียงราย ?</h4>
@@ -96,7 +97,7 @@ $rs = mysql_query($sql);
 						<i class="<?php echo $s['icon']; ?>"></i>
 					</div>
 					<div class="media-body">
-						<?php echo $s["detail_".$_SESSION['lang']]; ?>
+						<?php echo nl2br($s["detail_".$_SESSION['lang']]); ?>
 					</div>
 				</div>
 				<?php } ?>
@@ -106,51 +107,28 @@ $rs = mysql_query($sql);
 
 
 
-	<?php
-	$list2 = array(
-		'fas fa-car' => array( 
-			'จากโครงการถึงในตัวเมืองขับรถเพียง 10 นาที',
-			'ขับรถ 5 นาทีถึงสนามกอล์ฟสันติบุรี',
-			'5 นาทีถึงเซ็นทรัล บิ๊กซี และโฮมโปร์',
-			'อยู่ใกล้ทางหลวงหมายเลข 3 ไป จีน-ลาว',
-			'ถนนสาธารณะใหม่ทั่วโครงการ'
-			),
-		'fas fa-pencil-ruler' => array(
-			'บริการออกแบบ้านให้ฟรีตามที่ฝันไว้',
-			'ไฟฟ้า 3 เฟสใหม่ของสาธารณะ',
-			),
-		'fas fa-map-marked-alt' => array(			
-			'ที่ดินทุกแปลงมีโฉนด',
-			'มีที่ดินหลาขนาดให้เลือก',
-			'พร้อมที่จะแบ่งขายตามที่ต้องการ'
-			),
-		'fas fa-users' => array(
-			'มีทั้งคนไทยและต่างชาติอาศัยอยู่'
-			),
-		'fas fa-headphones' => array(
-			'สงบเงียบไม่มีเสียงดังมลภาวะทางอากาศและรถติดตลอดจนปัญหาของเมือง'
-			),
-		'fas fa-hospital' => array(
-			'ใกล้ โรงพยาบาลที่มีการบริการฉุกเฉิน ตลอด 24 ชั่วโมง'
-			)
-		);
-		?>
+	<?php 
+	$sql = "SELECT * FROM home_list WHERE list_group = '2'";
+	$rs = mysql_query($sql);
+	?>
 
+	<div class="col-md-6 font-prompt mb-2">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="text-center mb-3 font-prompt tcolor1">จุดเด่นของบ้านเมลานี...</h4>
 
-		<div class="col-md-6 font-prompt">
-			<h4 class="text-center mb-3 tcolor1">จุดเด่นของบ้านเมลานี...</h4>
-			<?php foreach( $list2 as $icon => $text_arr ){ ?>
-			<div class="media mb-2">
-				<div class="media-icon mr-2">
-					<i class="<?php echo $icon; ?>"></i>
+				<?php while( $s = mysql_fetch_assoc($rs) ){ ?>
+				<div class="media mb-2">
+					<div class="media-icon mr-2">
+						<i class="<?php echo $s['icon']; ?>"></i>
+					</div>
+					<div class="media-body">
+						<?php echo nl2br($s["detail_".$_SESSION['lang']]); ?>
+					</div>
 				</div>
-				<div class="media-body">
-					<?php foreach( $text_arr as $text ){ ?>
-					<div class="media-heading"><?php echo $text; ?></div>
-					<?php } ?>
-				</div>
+				<?php } ?>
 			</div>
-			<?php } ?>
 		</div>
-
 	</div>
+
+</div>
