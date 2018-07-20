@@ -15,7 +15,7 @@ $i=1;
 	<?php while( $s = mysql_fetch_array($rs) ){ ?>
 		<div class="col-sm-6 col-md-4">
 
-			<div class="card mb-3">
+			<div class="card mb-3 card-list">
 				<div class="card-body font-prompt p-2">
 					<div class="list-pic">
 						<a href="?page=house_detail&h_id=<?php echo $s['h_id']; ?>">
@@ -23,7 +23,7 @@ $i=1;
 						</a>
 					</div>
 
-					<table class="table table-condensed table-sm">
+					<table class="table table-condensed table-sm border-bottom">
 						<tbody>
 							<tr>
 								<td><a href="?page=house_detail&h_id=<?php echo $s['h_id']; ?>"><?php echo $s['h_name_'.$_SESSION["lang"]]; ?></a></td>
@@ -47,6 +47,11 @@ $i=1;
 							</tr>
 						</tbody>
 					</table>
+					<div class="text-right">
+						<a href="?page=house_detail&h_id=<?php echo $s['h_id']; ?>">
+							<button class="btn btn-primary btn-sm">รายละเอียด <i class="fas fa-angle-double-right"></i></button>
+						</a>
+					</div>
 				</div>
 			</div>	
 			

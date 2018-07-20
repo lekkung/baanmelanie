@@ -1,4 +1,5 @@
 <h3 class="text-center font-prompt mt-4 mb-4 p-0 tcolor1"><?php echo $building_title;?></h3>
+<hr>
 
 <h4 class="font-prompt tcolor2"><?php echo $building_title1;?></h4>
 
@@ -15,7 +16,15 @@ $i=1;
 				<div class="card-body font-prompt p-2">
 					<div class="list-pic">
 						<a href="?page=building_detail&build=swiming_pool&s_id=<?php echo $s['s_id']; ?>">
-							<img src="<?php echo "building/swim_pic/".$s['s_id']."/".$s['s_pic_show']; ?>" class="img-responsive" />
+							<?php
+							$imageURL = "building/swim_pic/".$s['s_id']."/".$s['s_pic_show'];
+							
+							if (file_exists($imageURL) !== false) {
+								echo '<img src="'.$imageURL.'" class="img-fluid" />';
+							}else{
+								echo '<img src="./images/not_images.jpg" class="img-fluid" />';
+							}
+							?>
 						</a>
 					</div>
 
@@ -43,6 +52,11 @@ $i=1;
 							</tr>
 						</tbody>
 					</table>
+					<div class="text-right">
+						<a href="?page=building_detail&build=swiming_pool&s_id=<?php echo $s['s_id']; ?>">
+							<button class="btn btn-primary btn-sm">รายละเอียด <i class="fas fa-angle-double-right"></i></button>
+						</a>
+					</div>
 				</div>
 			</div>	
 			
@@ -69,7 +83,7 @@ $i=1;
 				<div class="card-body font-prompt p-2">
 					<div class="list-pic">
 						<a href="?page=building_detail&build=building&b_id=<?php echo $s['b_id']; ?>">
-							<img src="<?php echo "building/build_pic/".$s['b_id']."/".$s['b_pic_show']; ?>" class="img-responsive" />
+							<img src="<?php echo "building/build_pic/".$s['b_id']."/".$s['b_pic_show']; ?>" class="img-fluid" />
 						</a>
 					</div>
 

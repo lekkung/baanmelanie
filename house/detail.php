@@ -1,63 +1,52 @@
-<div class="row">
-	<h2 class="text-center">แบบบ้านเมลานี</h2>
-	<hr>
-</div>
+<h3 class="text-center font-prompt mt-4 mb-4 p-0 tcolor1"><?php echo $house_title;?></h3>
+<hr>
 
-<div class="row">
-	<div class="col-md-12">
-		<?php
-		$h_id = $_GET['h_id'];
-		$sql = " SELECT * FROM house_h WHERE h_id = '$h_id' ";
-		$rs = mysql_query($sql);
-		$s = mysql_fetch_array($rs);
-		?>
+<?php
+$h_id = $_GET['h_id'];
+$sql = " SELECT * FROM house_h WHERE h_id = '$h_id' ";
+$rs = mysql_query($sql);
+$house_h = mysql_fetch_assoc($rs);
+?>
 
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h2 style="color:#610061;"><?php echo $s['h_name_th'];?> [<?php echo $s['h_name_en'];?>]</h2>
-			</div>
-			<div class="panel-body" style="padding:10px 0 0 0;">
-				<table class="table table-striped">
-					<tr>
-						<th align="left">แบบบ้าน</th><td align="right"><?php echo $s['h_style_th'];?></td>
-					</tr>
-					<tr>
-						<th align="left">ระดับ</th><td align="right"><?php echo $s['h_group'];?></td>
-					</tr>
-					<tr>
-						<th align="left">ห้องนอน</th><td align="right"><?php echo $s['h_bed'];?></td>
-					</tr>
-					<tr>
-						<th align="left">ห้องน้ำ</th><td align="right"><?php echo $s['h_bath'];?></td>
-					</tr>
-					<tr>
-						<th align="left">ที่จอดรถ</th><td align="right"><?php echo $s['h_parking'];?></td>
-					</tr>
-					<tr>
-						<th align="left">พื้นที่ภายใน</th><td align="right"><?php echo $s['h_area_in'];?> ตร.ม.</td>
-					</tr>
-					<tr>
-						<th align="left">พื้นที่ภายนอก</th><td align="right"><?php echo $s['h_area_out'];?> ตร.ม.</td>
-					</tr>
-					<tr>
-						<th align="left">บริเวณที่จอดรถ</th><td align="right"><?php echo $s['h_area_park'];?> ตร.ม.</td>
-					</tr>
-					<tr>
-						<th align="left">พื้นที่ทั้งหมด</th><td align="right"><?php echo $s['h_area_all'];?> ตร.ม.</td>
-					</tr>
-					<tr>
-						<th align="left">ราคา</th><td align="right"><?php echo number_format($s['h_price'],0);?> บาท</td>
-					</tr>
-					<tr>
-						<th align="left">หมายเหตุ</th><td align="right"><?php echo $s['h_remarks_th'];?></td>
-					</tr>
-				</table>
-			</div>
-		</div>		
+<h4 class="tcolor2 font-prompt">
+	<a href="javascript:void(0)" onclick="window.history.go(-1)" class="tcolor2"><i class="fas fa-angle-left"></i></a>
+	<?php echo $house_h['h_name_th'];?> [<?php echo $house_h['h_name_en'];?>]
+</h4>
+
+<div class="card font-prompt">
+	<div class="card-body p-0">
+		<table class="table table-striped table-sm m-0">
+			<?php 
+			$sql = " SELECT * FROM house_detail_h WHERE lang = '$lang'";
+			$rs = mysql_query($sql);
+			while( $s = mysql_fetch_assoc($rs) ){
+			?>
+			<tr>
+				<td>
+					<div class="row">
+						<div class="col-auto tcolor1" style="font-weight: 600;"><?php echo $s['title'];?></div>
+						<div class="col text-right">
+							<?php 
+							if( $s['field_name'] == 'h_price' ){
+								echo number_format($house_h['h_price'],0);
+							}else{
+								echo $house_h[$s['field_name']];
+							}
+
+							echo ' '.$s['unit'];
+							?>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<?php } ?>
+			</tr>
+		</table>
 	</div>
-</div>
+</div>		
 
-<br><br>
+
+<br>
 
 <?php
 if( is_dir("house/house_pic/$h_id") ){
@@ -98,6 +87,8 @@ if( is_dir("house/house_pic/$h_id") ){
 	</div>
 
 </div>
+
+<br>
 
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -202,3 +193,4 @@ var openPhotoSwipe = function(index) {
 
 // document.getElementById('btn').onclick = openPhotoSwipe;
 </script>
+

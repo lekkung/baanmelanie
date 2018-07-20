@@ -19,13 +19,15 @@
 }
 
 #navMenu>ul>li>a{
-	padding-left: .5rem;
+	padding: 8px;
 }
 
 #navMenu>ul>li>a.active{
 	color: #610061;
+	padding:6px;
 	border: #610061 2px solid;
 	border-radius: 5px;
+	/*outline: #610061 2px solid;*/
 }
 
 a:hover {
@@ -48,6 +50,17 @@ a:hover {
 .lang a.active{
 	color: #FDC54C;
 }
+
+.card-list:hover{
+	border-color: #FC3858;
+}
+
+.btn-toggler{
+	border-color: #610061;
+	color:#610061; 
+	font-weight: bold;
+}
+
 /*
 #F85E7F
 #A7016B

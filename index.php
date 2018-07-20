@@ -15,15 +15,16 @@ if( empty($_SESSION["lang"]) ){
 	$_SESSION["lang"] = 'th';
 }
 
-if( $_SESSION["lang"] == 'th' ){
+$page = $_GET['page'];
+$lang = $_SESSION['lang'];
+
+if( $lang == 'th' ){
 	require_once('lang_th.php');
-}else if( $_SESSION["lang"] == 'en' ){
+}else if( $lang == 'en' ){
 	require_once('lang_en.php');
-}else if( $_SESSION["lang"] == 'cn' ){
+}else if( $lang == 'cn' ){
 	require_once('lang_cn.php');
 }
-
-$page = $_GET['page'];
 
 // echo $_SESSION["lang"];
 
@@ -84,9 +85,15 @@ $page = $_GET['page'];
 				</a>
 			</div>
 
+			<button class="btn btn-toggler btn-sm d-lg-none" data-toggle="collapse" data-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+				Menu
+			</button>
+
+			<!-- 
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 			</button>
+			-->
 
 			<div class="collapse navbar-collapse" id="navMenu">
 					<ul class="navbar-nav ml-auto">
