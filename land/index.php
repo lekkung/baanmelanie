@@ -1,4 +1,4 @@
-<h3 class="text-center font-prompt mt-4 mb-4 p-0 tcolor1"><?php echo $house_title;?></h3>
+<h3 class="text-center font-prompt mt-4 mb-4 p-0 tcolor1"><?php echo $land_title;?></h3>
 
 
 <?php
@@ -8,16 +8,16 @@ $rs = mysql_query($sql);
 <table class="table table-bordered table-hover table-responsive-sm font-prompt">
 	<thead style="background:#f0f0f0;">
 		<tr>
-			<th class="text-center" rowspan="2">ตำแหน่ง</th>
-			<th class="text-center" colspan="3">เนื้อที่</th>
-			<th class="text-center" rowspan="2">ราคา/ตารางวา</th>
-			<th class="text-center" rowspan="2">ราคารวม</th>
-			<th class="text-center" rowspan="2">หมายเหตุ</th>
+			<th class="text-center" rowspan="2"><?php echo $land_th[0];?></th>
+			<th class="text-center" colspan="3"><?php echo $land_th[1];?></th>
+			<th class="text-center" rowspan="2"><?php echo $land_th[2];?></th>
+			<th class="text-center" rowspan="2"><?php echo $land_th[3];?></th>
+			<th class="text-center" rowspan="2"><?php echo $land_th[4];?></th>
 		</tr>		
 		<tr>
-			<th class="text-center" width="80">ไร่</th>
-			<th class="text-center" width="80">งาน</th>
-			<th class="text-center" width="80">ตร.ว.</th>
+			<th class="text-center" width="80"><?php echo $land_th[5];?></th>
+			<th class="text-center" width="80"><?php echo $land_th[6];?></th>
+			<th class="text-center" width="80"><?php echo $land_th[7];?></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -41,7 +41,7 @@ $rs = mysql_query($sql);
 					echo number_format( ( ($s['rai'] * 100 * 4) + ($s['ngan'] * 100) + $s['wah2'] ) * $s['price_wah2'] );
 				?>
 			</td>
-			<td style="color:#F00;"><?php echo $s['remarks']; ?></td>
+			<td style="color:#F00;"><?php echo $s['remarks_'.$lang]; ?></td>
 		</tr>
 		<? } ?>
 	</tbody>

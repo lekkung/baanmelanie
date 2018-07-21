@@ -73,7 +73,7 @@ if( $lang == 'th' ){
 		<div class="container text-right font-prompt lang">
 			<a href="change_lang.php?lang=th" <?php if( $_SESSION["lang"] == 'th' ){ echo 'class="active"'; } ?>>Thai</a> | 
 			<a href="change_lang.php?lang=en" <?php if( $_SESSION["lang"] == 'en' ){ echo 'class="active"'; } ?>>English</a> | 
-			<a href="change_lang.php?lang=cn" <?php if( $_SESSION["lang"] == 'cn' ){ echo 'class="active"'; } ?>>中国语文</a>
+			<a href="change_lang.php?lang=cn" <?php if( $_SESSION["lang"] == 'cn' ){ echo 'class="active"'; } ?>>中文</a>
 		</div>
 	</div>
 
@@ -230,7 +230,8 @@ if( $lang == 'th' ){
 
 				<div class="col-sm-6 font-prompt text-white">
 					<p style="font-size:13px;">
-						<?php echo $copy_right; ?>
+						<?php echo $copy_right1; ?>
+						<span style="font-size:11px; color:#ddd;">- <?php echo $copy_right2; ?> -</span>
 					</p>
 
 				</div>

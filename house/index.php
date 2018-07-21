@@ -30,26 +30,26 @@ $i=1;
 								<td><div class="text-right"> <?php echo number_format($s['h_price'],0);?> ฿</div></td>
 							</tr>
 							<tr>
-								<td>แบบบ้าน</td>
+								<td><?php echo $house_h_index[0];?></td>
 								<td><div class="text-right"> <?php echo $s['h_style_'.$_SESSION["lang"]] ?></div></td>
 							</tr>
 							<tr>
-								<td>ห้องนอน</td>
+								<td><?php echo $house_h_index[1];?></td>
 								<td><div class="text-right"> <?php echo $s['h_bed'] ?></div></td>
 							</tr>
 							<tr>
-								<td>ห้องน้ำ</td>
+								<td><?php echo $house_h_index[2];?></td>
 								<td><div class="text-right"> <?php echo $s['h_bath'] ?></div></td>
 							</tr>
 							<tr>
-								<td>ที่จอดรถ</td>
+								<td><?php echo $house_h_index[3];?></td>
 								<td><div class="text-right"> <?php echo $s['h_parking'] ?></div></td>
 							</tr>
 						</tbody>
 					</table>
 					<div class="text-right">
 						<a href="?page=house_detail&h_id=<?php echo $s['h_id']; ?>">
-							<button class="btn btn-primary btn-sm">รายละเอียด <i class="fas fa-angle-double-right"></i></button>
+							<button class="btn btn-primary btn-sm"><?php echo $house_h_index[4];?> <i class="fas fa-angle-double-right"></i></button>
 						</a>
 					</div>
 				</div>

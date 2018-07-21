@@ -1,5 +1,5 @@
 
-<h4 class="text-center font-prompt mt-4 mb-4 p-0 tcolor1"><?php echo $title1;?></h4>
+<h4 class="text-center font-prompt mt-4 mb-4 p-0 tcolor1"><?php echo $home_title;?></h4>
 <!-- <hr class="m-0 mb-4"> -->
 
 <div class="card">
@@ -7,37 +7,28 @@
 		<div class="row pt-2">
 			<div class="col-sm-4 text-center font-prompt">
 				<h4>
-					<a href="?page=map" class="tcolor2"><i class="fas fa-map-marked-alt"></i> สถานที่ตั้ง</a>
+					<a href="?page=map" class="tcolor2"><i class="fas fa-map-marked-alt"></i> <?php echo $home_h1[0];?></a>
 				</h4>
 				<p>
-					ใกล้ตัวเมืองเพียง 10 นาที<br>
-					ใกล้ห้างสรรพสินค้า<br>
-					ใกล้ถนนสายหลัก เดินทางสะดวก<br>
-					ที่ดินทุกแปลงมีโฉนด<br>
-					ไม่มีน้ำท่วม และดินถล่ม<br>
+					<?php echo $home_d1[0];?>
 				</p>
 			</div>
 
 			<div class="col-sm-4 text-center font-prompt">
 				<a href="?page=land" class="tcolor2">
-					<h4><i class="fab fa-pagelines"></i> บรรยากาศ</h4>
+					<h4><i class="fab fa-pagelines"></i> <?php echo $home_h1[1];?></h4>
 				</a>
 				<p>
-					เงียบ สงบ<br>
-					ร่มรื่น เป็นธรรมชาติ<br>
-					สภาพแวดล้อมสะอาด<br>
-					ไม่มีมลพิษ
+					<?php echo $home_d1[1];?>
 				</p>
 			</div>
 
 			<div class="col-sm-4 text-center font-prompt">
 				<a href="?page=house" class="tcolor2">
-					<h3><i class="fas fa-home"></i> บ้าน</h3>
+					<h3><i class="fas fa-home"></i> <?php echo $home_h1[2];?></h3>
 				</a>
 				<p>
-					หรูหรา ทันสมัย<br>
-					มีวิศวกรและสถาปนิกผู้เชี่ยวชาญ<br>
-					มีคุณภาพและราคาที่เป็นธรรม<br>
+					<?php echo $home_d1[2];?>
 				</p>
 			</div>
 		</div>
@@ -45,7 +36,7 @@
 </div>
 
 
-<h4 class="text-center font-prompt mt-4 mb-4 p-0 tcolor1">แบบบ้านเมลานี</h4>
+<h4 class="text-center font-prompt mt-4 mb-4 p-0 tcolor1"><?php echo $house_title;?></h4>
 
 <div class="row">
 	<div class="col-md-3 col-6" style="padding-bottom:10px;">
@@ -73,7 +64,7 @@
 		<img src="images/house/360/Pools_25.jpg" class="img-fluid rounded">
 	</div>
 	<div class="col-12 text-right font-prompt mb-3">
-		<a href="?page=house" class="tcolor2">แบบบ้านทั้งหมด <i class="fas fa-angle-double-right"></i></a>
+		<a href="?page=house" class="tcolor2"><?php echo $home_all_house;?> <i class="fas fa-angle-double-right"></i></a>
 	</div>
 </div>
 
@@ -89,7 +80,7 @@
 	<div class="col-md-6 font-prompt mb-2 h-100">
 		<div class="card">
 			<div class="card-body">
-				<h4 class="text-center mb-3 font-prompt tcolor1">ทำไมต้องเลือกหาบ้านพักในเชียงราย ?</h4>
+				<h4 class="text-center mb-3 font-prompt tcolor1"><?php echo $home_h1[3];?></h4>
 
 				<?php while( $s = mysql_fetch_assoc($rs) ){ ?>
 				<div class="media mb-2">
@@ -97,7 +88,7 @@
 						<i class="<?php echo $s['icon']; ?>"></i>
 					</div>
 					<div class="media-body">
-						<?php echo nl2br($s["detail_".$_SESSION['lang']]); ?>
+						<?php echo nl2br($s["detail_".$lang]); ?>
 					</div>
 				</div>
 				<?php } ?>
@@ -115,7 +106,7 @@
 	<div class="col-md-6 font-prompt mb-2 h-100">
 		<div class="card">
 			<div class="card-body">
-				<h4 class="text-center mb-3 font-prompt tcolor1">จุดเด่นของบ้านเมลานี...</h4>
+				<h4 class="text-center mb-3 font-prompt tcolor1"><?php echo $home_h1[4];?></h4>
 
 				<?php while( $s = mysql_fetch_assoc($rs) ){ ?>
 				<div class="media mb-2">
@@ -123,7 +114,7 @@
 						<i class="<?php echo $s['icon']; ?>"></i>
 					</div>
 					<div class="media-body">
-						<?php echo nl2br($s["detail_".$_SESSION['lang']]); ?>
+						<?php echo nl2br($s["detail_".$lang]); ?>
 					</div>
 				</div>
 				<?php } ?>

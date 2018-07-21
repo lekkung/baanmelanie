@@ -40,7 +40,6 @@ $house_h = mysql_fetch_assoc($rs);
 				</td>
 			</tr>
 			<?php } ?>
-			</tr>
 		</table>
 	</div>
 </div>		
